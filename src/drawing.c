@@ -23,3 +23,249 @@ void clear_screen()
 		}
 	}
 }
+
+// Function draws number zero onto the VGA screen
+void numberZero(short int numberColourArray[20][10])
+{
+	for (int i=0; i<10; i++)
+	{
+		for (int j=0; j<20; j++)
+		{
+			if (i==0 || i==9 || j==0 || j==19)
+			{
+				numberColourArray[j][i] = 0x001F;
+			}
+			else
+			{
+				numberColourArray[j][i] = 0;
+			}
+		}
+	}
+}
+
+// Function draws number one onto the VGA screen
+void numberOne(short int numberColourArray[20][10])
+{
+	for (int i=0; i<10; i++)
+	{
+		for (int j=0; j<20; j++)
+		{
+			if (i >= 3 && i <=5)
+			{
+				numberColourArray[j][i] = 0x001F;
+			}
+			else
+			{
+				numberColourArray[j][i] = 0;
+			}
+		}
+	}
+}
+
+// Function draws number two onto the VGA screen
+void numberTwo(short int numberColourArray[20][10])
+{
+	for (int i=0; i<10; i++)
+	{
+		for (int j=0; j<20; j++)
+		{
+			if (j==0)
+			{
+				numberColourArray[j][i] = 0x001F;
+			}
+			else if (i==9 && (j>=0 && j <= 9))
+			{
+				numberColourArray[j][i] = 0x001F;
+			}
+			else if (j == 9)
+			{
+				numberColourArray[j][i] = 0x001F;
+			}
+			else if (i==0 && (j>=9 && j <20))
+			{
+				numberColourArray[j][i] = 0x001F;
+			}
+			else if (j == 19)
+			{
+				numberColourArray[j][i] = 0x001F;
+			}
+			else
+			{
+				numberColourArray[j][i] = 0;
+			}
+		}
+	}
+}
+
+// Function draws number three onto the VGA screen
+void numberThree(short int numberColourArray[20][10])
+{
+	for (int i=0; i<10; i++)
+	{
+		for (int j=0; j<20; j++)
+		{
+			if (i==9)
+			{
+				numberColourArray[j][i] = 0x001F;
+			}
+			else if (j==0 || j==9 || j==19)
+			{
+				numberColourArray[j][i] = 0x001F;
+			}
+			else
+			{
+				numberColourArray[j][i] = 0;
+			}
+		}
+	}
+}
+
+// Function draws number four onto the VGA screen
+void numberFour(short int numberColourArray[20][10])
+{
+	for (int i=0; i<10; i++)
+	{
+		for (int j=0; j<20; j++)
+		{
+			if (j==11)
+			{
+				numberColourArray[j][i] = 0x001F;	
+			}
+			else if (i>=0 && i<=1 && j>=0 && j<=11)
+			{
+				numberColourArray[j][i] = 0x001F;
+			}
+			else if (i>=4 && i<=5 && j>=7 && j<=19)
+			{
+				numberColourArray[j][i] = 0x001F;
+			}
+			else
+			{
+				numberColourArray[j][i] = 0;
+			}
+		}	
+	}
+}
+
+// Function draws number five onto the VGA screen
+void numberFive(short int numberColourArray[20][10])
+{
+	for (int i=0; i<10; i++)
+	{
+		for (int j=0; j<20; j++)
+		{
+			if (j==0 || j==9 || j==19)
+			{
+				numberColourArray[j][i] = 0x001F;
+			}
+			else if (i==0 && j>=0 && j<=9)
+			{
+				numberColourArray[j][i] = 0x001F;
+			}
+			else if (i==9 && j>=9 && j<=19)
+			{
+				numberColourArray[j][i] = 0x001F;
+			}
+			else 
+			{
+				numberColourArray[j][i] = 0;
+			}
+		}
+	}	
+}
+
+// Function draws number six onto the VGA screen
+void numberSix(short int numberColourArray[20][10])
+{
+	for (int i=0; i<10; i++)
+	{
+		for (int j=0; j<20; j++)
+		{
+			if (j==0 || j==9 || j==19 || i==0)
+			{
+				numberColourArray[j][i] = 0x001F;
+			}
+			else if (i==9 && j>=9 && j<=19)
+			{
+				numberColourArray[j][i] = 0x001F;
+			}
+			else
+			{
+				numberColourArray[j][i] = 0;
+			}
+		}
+	}
+}
+
+// Function draws number seven onto the VGA screen
+void numberSeven(short int numberColourArray[20][10])
+{
+	for (int i=0; i<10; i++)
+	{
+		for (int j=0; j<20; j++)
+		{
+			if (i==9 || j==0)
+			{
+				numberColourArray[j][i] = 0x001F;
+			}
+			else
+			{
+				numberColourArray[j][i] = 0;
+			}
+		}
+	}
+}
+
+// Function draws number eight onto the VGA screen
+void numberEight(short int numberColourArray[20][10])
+{
+	for (int i=0; i<10; i++)
+	{
+		for (int j=0; j<20; j++)
+		{
+			if (i==0 || i==9 || j==0 || j==9 || j==19)
+			{
+				numberColourArray[j][i] = 0x001F;
+			}
+			else
+			{
+				numberColourArray[j][i] = 0;
+			}
+		}
+	}
+}
+
+// Function draws number nine onto the VGA screen
+void numberNine(short int numberColourArray[20][10])
+{
+	for (int i=0; i<10; i++)
+	{
+		for (int j=0; j<20; j++)
+		{
+			if (i==9 || j==0 || j==9)
+			{
+				numberColourArray[j][i] = 0x001F;
+			}
+			else if (i==0 && j>=0 && j<=9)
+			{
+				numberColourArray[j][i] = 0x001F;
+			}
+			else
+			{
+				numberColourArray[j][i] = 0;
+			}
+		}
+	}
+}
+
+// Function draws a box onto the VGA screen
+void boxShape(short int numberColourArray[2][2])
+{
+	for (int i=0; i<2; i++)
+	{
+		for (int j=0; j<2; j++)
+		{
+			numberColourArray[i][j] = numberColourArray[j][i] = 0x001F;
+		}
+	}
+}

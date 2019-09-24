@@ -278,5 +278,24 @@ int main(void)
 		}
 	}
 
+	// Draw the squares between that separate the hour from the minute and second numbers
+	short int box[2][2];
+	boxShape(box);
+	
+	for (int x=0; x<2; x++)
+	{
+		for (int y=0; y<2; y++)
+		{
+			plot_pixel(149+x, 66+y, box[x][y]);
+			plot_pixel(149+x, 73+y, box[x][y]);
+			plot_pixel(149+x, 126+y, box[x][y]);
+			plot_pixel(149+x, 132+y, box[x][y]);
+			plot_pixel(184+x, 66+y, box[x][y]);
+			plot_pixel(184+x, 73+y, box[x][y]);
+			plot_pixel(184+x, 126+y, box[x][y]);
+			plot_pixel(184+x, 132+y, box[x][y]);
+		}
+	}
+
 	return 0;
 }

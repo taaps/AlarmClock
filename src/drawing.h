@@ -43,9 +43,9 @@ void drawNumberNine(short int numberColourArray[20][10]);
 void boxShape(short int numberColourArray[2][2]);
 
 // Function draws ones digit of the second, minute, or hour variable
-void drawSecondBitA(int number, short int colour[20][10]);
+void drawBitA(int number, short int colour[20][10]);
 
 // Function draws tens digit of the second, minute, or hour variable
-void drawSecondBitB(int number, short int colour[20][10]);
+void drawBitB(int number, short int colour[20][10]);
 
 #endif	// Don't include file again

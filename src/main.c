@@ -38,6 +38,7 @@ int main(void)
 	Key 2: increase the number of seconds/minutes/hours by 5
 	*/
 
+	// First time input
 	while (1)
 	{
 		// Set the number of seconds
@@ -131,6 +132,89 @@ int main(void)
 			assignHourBitB(hourA, HEXb_ctrl_ptr, 0x0000FF00);
 		}
 	}
+
+	// Second time input
+	*EDGECAPTURE_ctrl_ptr = 0b1000;
+	*HEXa_ctrl_ptr = 0x00000000;
+	*HEXb_ctrl_ptr = 0x00000000;
+	
+	while (true)
+	{
+		if ((*SW_ctrl_ptr) == 1)
+		{
+			// Increase the number of seconds by 1
+			if ((*EDGECAPTURE_ctrl_ptr) == 1)
+			{
+				// Reset edgecapture bit
+				*EDGECAPTURE_ctrl_ptr = 0b1;
+				secondB = secondB + 1;
+			}
+			// Increase the number of seconds by 5
+			else if ((*EDGECAPTURE_ctrl_ptr) == 2)
+			{
+				// Reset edgecapture bit
+				*EDGECAPTURE_ctrl_ptr = 0b10;
+				secondB = secondB + 5;
+			}
+
+			// Loop number of seconds
+			if (secondB >= 60)
+				secondB = 0;
+		}
+		
+		else if ((*SW_ctrl_ptr) == 2)
+		{
+			// Increase the number of minutes by 1
+			if ((*EDGECAPTURE_ctrl_ptr) == 1)
+			{
+				// Reset edgecapture bit
+				*EDGECAPTURE_ctrl_ptr = 0b1;
+				minuteB = minuteB + 1;
+			}
+			// Increase the number of minutes by 5
+			else if ((*EDGECAPTURE_ctrl_ptr) == 2)
+			{
+				// Reset edgecapture bit
+				*EDGECAPTURE_ctrl_ptr = 0b10;
+				minuteB = minuteB + 5;
+			}
+
+			// Loop number of minutes
+			if (minuteB >= 60)
+				minuteB = 0;
+		}
+		
+		else if ((*SW_ctrl_ptr) == 4)
+		{
+			// Increase the number of hours by 1
+			if ((*EDGECAPTURE_ctrl_ptr) == 1)
+			{
+				// Reset edgecapture bit
+				*EDGECAPTURE_ctrl_ptr = 0b1;
+				hourB = hourB + 1;
+			}
+			// Increase the number of hours by 5
+			else if ((*EDGECAPTURE_ctrl_ptr) == 2)
+			{
+				// Reset edgecapture bit
+				*EDGECAPTURE_ctrl_ptr = 0b10;
+				hourB = hourB + 5;
+			}
+
+			// Loop number of hours
+			if (hourB >= 24)
+				hourB = 0;
+		}
+	
+		// Done setting the first time, exit out of this loop
+		if ((*EDGECAPTURE_ctrl_ptr) == 8)
+			break;
+
+		if (((*EDGECAPTURE_ctrl_ptr)==1) && ((*SW_ctrl_ptr)==0))
+			*EDGECAPTURE_ctrl_ptr = 0b1;
+		
+		if (((*EDGECAPTURE_ctrl_ptr)==2) && ((*SW_ctrl_ptr)==0))
+			*EDGECAPTURE_ctrl_ptr = 0b10;
 
 	return 0;
 }

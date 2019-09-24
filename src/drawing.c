@@ -269,3 +269,53 @@ void boxShape(short int numberColourArray[2][2])
 		}
 	}
 }
+
+// Function draws ones digit of the second, minute, or hour variable
+void drawSecondBitA(int number, short int colour[20][10])
+{
+	if ((number%10)==0)	
+		numberZero(colour);
+	else if ((number)==1)	
+		numberOne(colour);
+	else if ((number%10)==2)	
+		numberTwo(colour);
+	else if ((number)==3)	
+		numberThree(colour);
+	else if ((number%10)==4)	
+		numberFour(colour);
+	else if ((number%10)==5)	
+		numberFive(colour);
+	else if ((number%10)==6)	
+		numberSix(colour);
+	else if ((number%10)==7)	
+		numberSeven(colour);
+	else if ((number%10)==8)	
+		numberEight(colour);
+	else if ((number%10)==9)	
+		numberNine(colour);
+}
+
+// Function draws tens digit of the second, minute, or hour variable
+void drawSecondBitB(int number, short int colour[20][10])
+{
+	if (((number/10)%10)==0)	
+		numberZero(colour);
+	else if (((number/10)%10)==1)	
+		numberOne(colour);
+	else if (((number/10)%10)==2)	
+		numberTwo(colour);
+	else if (((number/10)%10)==3)	
+		numberThree(colour);
+	else if (((number/10)%10)==4)	
+		numberFour(colour);
+	else if (((number/10)%10)==5)	
+		numberFive(colour);
+	else if (((number/10)%10)==6)	
+		numberSix(colour);
+	else if (((number/10)%10)==7)	
+		numberSeven(colour);
+	else if (((number/10)%10)==8)	
+		numberEight(colour);
+	else if (((number/10)%10)==9)	
+		numberNine(colour);
+}

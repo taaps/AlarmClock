@@ -10,36 +10,42 @@ void plot_pixel(int x, int y, short int line_color);
 void clear_screen();
 
 // Function draws number zero onto the VGA screen
-void numberZero(short int numberColourArray[20][10]);
+void drawNumberZero(short int numberColourArray[20][10]);
 
 // Function draws number one onto the VGA screen
-void numberOne(short int numberColourArray[20][10]);
+void drawNumberOne(short int numberColourArray[20][10]);
 
 // Function draws number two onto the VGA screen
-void numberTwo(short int numberColourArray[20][10]);
+void drawNumberTwo(short int numberColourArray[20][10]);
 
 // Function draws number three onto the VGA screen
-void numberThree(short int numberColourArray[20][10]);
+void drawNumberThree(short int numberColourArray[20][10]);
 
 // Function draws number four onto the VGA screen
-void numberFour(short int numberColourArray[20][10]);
+void drawNumberFour(short int numberColourArray[20][10]);
 
 // Function draws number five onto the VGA screen
-void numberFive(short int numberColourArray[20][10]);
+void drawNumberFive(short int numberColourArray[20][10]);
 
 // Function draws number six onto the VGA screen
-void numberSix(short int numberColourArray[20][10]);
+void drawNumberSix(short int numberColourArray[20][10]);
 
 // Function draws number seven onto the VGA screen
-void numberSeven(short int numberColourArray[20][10]);
+void drawNumberSeven(short int numberColourArray[20][10]);
 
 // Function draws number eight onto the VGA screen
-void numberEight(short int numberColourArray[20][10]);
+void drawNumberEight(short int numberColourArray[20][10]);
 
 // Function draws number nine onto the VGA screen
-void numberNine(short int numberColourArray[20][10]);
+void drawNumberNine(short int numberColourArray[20][10]);
 
 // Function draws a box onto the VGA screen
 void boxShape(short int numberColourArray[2][2]);
+
+// Function draws ones digit of the second, minute, or hour variable
+void drawSecondBitA(int number, short int colour[20][10]);
+
+// Function draws tens digit of the second, minute, or hour variable
+void drawSecondBitB(int number, short int colour[20][10]);
 
 #endif	// Don't include file again

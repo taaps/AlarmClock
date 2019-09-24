@@ -216,5 +216,12 @@ int main(void)
 		if (((*EDGECAPTURE_ctrl_ptr)==2) && ((*SW_ctrl_ptr)==0))
 			*EDGECAPTURE_ctrl_ptr = 0b10;
 
+		assignSecondBitA(secondB, HEXa_ctrl_ptr, 0x000000FF);
+		assignSecondBitB(secondB, HEXa_ctrl_ptr, 0x0000FF00);
+		assignMinuteBitA(minuteB, HEXa_ctrl_ptr, 0x00FF0000);
+		assignMinuteBitB(minuteB, HEXa_ctrl_ptr, 0xFF000000);
+		assignHourBitA(hourB, HEXb_ctrl_ptr, 0x000000FF);
+		assignHourBitB(hourB, HEXb_ctrl_ptr, 0x0000FF00);
+
 	return 0;
 }

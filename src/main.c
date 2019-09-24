@@ -222,6 +222,35 @@ int main(void)
 		assignMinuteBitB(minuteB, HEXa_ctrl_ptr, 0xFF000000);
 		assignHourBitA(hourB, HEXb_ctrl_ptr, 0x000000FF);
 		assignHourBitB(hourB, HEXb_ctrl_ptr, 0x0000FF00);
+	}
+
+	// Draw the numbers onto the VGA screen
+	// Reset LEDR pointer address
+	*LEDR_ctrl_ptr = 0b0000000000;
+	
+	short int hourATenDigitColour[20][10];
+	short int hourAOnesDigitColour[20][10];
+	short int minuteATenDigitColour[20][10];
+	short int minuteAOnesDigitColour[20][10];
+	short int secondATenDigitColour[20][10];
+	short int secondAOnesDigitColour[20][10];
+	short int hourBTenDigitColour[20][10];
+	short int hourBOnesDigitColour[20][10];
+	short int minuteBTenDigitColour[20][10];
+	short int minuteBOnesDigitColour[20][10];
+	short int secondBTenDigitColour[20][10];
+	short int secondBOnesDigitColour[20][10];
+
+	// Set first time colours
+	drawBitA(secondA, secondAOnesDigitColour);
+	drawBitB(secondA, secondATenDigitColour);
+	drawBitA(minuteA, minuteAOnesDigitColour);
+	drawBitB(minuteA, minuteATenDigitColour);
+	drawBitA(hourA, hourAOnesDigitColour);
+	drawBitB(hourA, hourATenDigitColour);
+
+
+
 
 	return 0;
 }

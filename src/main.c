@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include "drawing.h"
+#include "bit_organizer.h"
 
 
 int main(void)
@@ -109,7 +110,7 @@ int main(void)
 			flag = 1;
 		}
 	
-		// Done setting the first time
+		// Done setting the first time, exit out of this loop
 		if ((*EDGECAPTURE_ctrl_ptr) == 8)
 			break;
 		
@@ -119,9 +120,17 @@ int main(void)
 		if (((*EDGECAPTURE_ctrl_ptr)==2) && ((*SW_ctrl_ptr)==0))
 			*EDGECAPTURE_ctrl_ptr = 0b10;
 
+		// Store bit values for second, minute and hour variables at appropriate addresses
+		if (flag)
+		{
+			assignSecondBitA(secondA, HEXa_ctrl_ptr, 0x000000FF);
+			assignSecondBitB(secondA, HEXa_ctrl_ptr, 0x0000FF00);
+			assignMinuteBitA(minuteA, HEXa_ctrl_ptr, 0x00FF0000);
+			assignMinuteBitB(minuteA, HEXa_ctrl_ptr, 0xFF000000);
+			assignHourBitA(hourA, HEXb_ctrl_ptr, 0x000000FF);
+			assignHourBitB(hourA, HEXb_ctrl_ptr, 0x0000FF00);
+		}
 	}
-
-
 
 	return 0;
 }

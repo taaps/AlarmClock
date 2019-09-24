@@ -1,0 +1,1 @@
+This repository creates an alarm clock using an Altera FPGA and a VGA screen

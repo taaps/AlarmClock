@@ -249,6 +249,13 @@ int main(void)
 	drawBitA(hourA, hourAOnesDigitColour);
 	drawBitB(hourA, hourATenDigitColour);
 
+	// Set the second time colours
+	drawBitA(secondB, secondBOnesDigitColour);
+	drawBitB(secondB, secondBTenDigitColour);
+	drawBitA(minuteB, minuteBOnesDigitColour);
+	drawBitB(minuteB, minuteBTenDigitColour);
+	drawBitA(hourB, hourBOnesDigitColour);
+	drawBitB(hourB, hourBTenDigitColour);
 
 
 

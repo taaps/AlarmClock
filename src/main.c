@@ -257,7 +257,26 @@ int main(void)
 	drawBitA(hourB, hourBOnesDigitColour);
 	drawBitB(hourB, hourBTenDigitColour);
 
-
+	// Draw the numbers at their appropriate locations on the FPGA
+	for (int x=0; x<10; x++)
+	{
+		for (int y=0; y<20; y++)
+		{
+			plot_pixel(120+x, 60+y, hourATenDigitColour[y][x]);
+			plot_pixel(135+x, 60+y, hourAOnesDigitColour[y][x]);
+			plot_pixel(155+x, 60+y, minuteATenDigitColour[y][x]);
+			plot_pixel(170+x, 60+y, minuteAOnesDigitColour[y][x]);
+			plot_pixel(190+x, 60+y, secondATenDigitColour[y][x]);
+			plot_pixel(205+x, 60+y, secondAOnesDigitColour[y][x]);
+			
+			plot_pixel(120+x, 120+y, hourBTenDigitColour[y][x]);
+			plot_pixel(135+x, 120+y, hourBOnesDigitColour[y][x]);
+			plot_pixel(155+x, 120+y, minuteBTenDigitColour[y][x]);
+			plot_pixel(170+x, 120+y, minuteBOnesDigitColour[y][x]);
+			plot_pixel(190+x, 120+y, secondBTenDigitColour[y][x]);
+			plot_pixel(205+x, 120+y, secondBOnesDigitColour[y][x]);
+		}
+	}
 
 	return 0;
 }
